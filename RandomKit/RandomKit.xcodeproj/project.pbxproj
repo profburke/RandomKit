@@ -25,6 +25,7 @@
 		C9AEBA141AE562B00034D8B3 /* RandomIntegerVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBA131AE562B00034D8B3 /* RandomIntegerVariables.swift */; };
 		C9AEBA161AE5663E0034D8B3 /* RandomDoubleVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBA151AE5663E0034D8B3 /* RandomDoubleVariables.swift */; };
 		C9AEBA181AE566E30034D8B3 /* Sequences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBA171AE566E30034D8B3 /* Sequences.swift */; };
+		C9BEB9481AE941D300B44E82 /* RandomReals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9BEB9471AE941D300B44E82 /* RandomReals.swift */; };
 		C9D76EA01AE85D340019E17B /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D76E9F1AE85D340019E17B /* Utilities.swift */; };
 		C9D76EA21AE85D660019E17B /* RandomInts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D76EA11AE85D660019E17B /* RandomInts.swift */; };
 /* End PBXBuildFile section */
@@ -63,6 +64,7 @@
 		C9AEBA131AE562B00034D8B3 /* RandomIntegerVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomIntegerVariables.swift; sourceTree = "<group>"; };
 		C9AEBA151AE5663E0034D8B3 /* RandomDoubleVariables.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomDoubleVariables.swift; sourceTree = "<group>"; };
 		C9AEBA171AE566E30034D8B3 /* Sequences.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sequences.swift; sourceTree = "<group>"; };
+		C9BEB9471AE941D300B44E82 /* RandomReals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomReals.swift; sourceTree = "<group>"; };
 		C9D76E9F1AE85D340019E17B /* Utilities.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Utilities.swift; sourceTree = "<group>"; };
 		C9D76EA11AE85D660019E17B /* RandomInts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomInts.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -163,6 +165,7 @@
 				C9AEB9FA1AE55CEB0034D8B3 /* RandomKit.h */,
 				C9D76E9F1AE85D340019E17B /* Utilities.swift */,
 				C9D76EA11AE85D660019E17B /* RandomInts.swift */,
+				C9BEB9471AE941D300B44E82 /* RandomReals.swift */,
 				C9AEBA111AE55D630034D8B3 /* Distributions.swift */,
 				C9AEBA131AE562B00034D8B3 /* RandomIntegerVariables.swift */,
 				C9AEBA151AE5663E0034D8B3 /* RandomDoubleVariables.swift */,
@@ -391,6 +394,7 @@
 			files = (
 				C9AEBA161AE5663E0034D8B3 /* RandomDoubleVariables.swift in Sources */,
 				C9AEBA121AE55D630034D8B3 /* Distributions.swift in Sources */,
+				C9BEB9481AE941D300B44E82 /* RandomReals.swift in Sources */,
 				C9AEBA181AE566E30034D8B3 /* Sequences.swift in Sources */,
 				C9D76EA01AE85D340019E17B /* Utilities.swift in Sources */,
 				C9D76EA21AE85D660019E17B /* RandomInts.swift in Sources */,
