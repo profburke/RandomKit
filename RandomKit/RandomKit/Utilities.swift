@@ -23,10 +23,11 @@ public func is64BitPlatform() -> Bool
 
 
 
+// TODO: generics ?
 
 /**
 
-Map a value to the given range.
+Map a double value to the given range.
 
 :param: value The value to transform.
 :param: range The range to which the given value should be mapped.
@@ -38,5 +39,22 @@ public func linearTransform(value: Double, range: Range<Int>) -> Double
   return Double(range.startIndex) + Double(range.endIndex - range.startIndex) * value
 }
 
+
+
+
+
+/**
+
+Map a float value to the given range.
+
+:param: value The value to transform.
+:param: range The range to which the given value should be mapped.
+:returns: The mapped value.
+
+*/
+public func linearTransform(value: Float, range: Range<Int>) -> Float
+{
+  return Float(range.startIndex) + Float(range.endIndex - range.startIndex) * value
+}
 
 

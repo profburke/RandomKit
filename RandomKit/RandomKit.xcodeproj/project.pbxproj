@@ -19,6 +19,10 @@
 		C929E4841AE59B3D0046F452 /* RandomDoubleVariables.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBA151AE5663E0034D8B3 /* RandomDoubleVariables.swift */; };
 		C929E4851AE59B420046F452 /* Sequences.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBA171AE566E30034D8B3 /* Sequences.swift */; };
 		C929E4871AE59B7A0046F452 /* DistributionTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C929E4861AE59B7A0046F452 /* DistributionTests.swift */; };
+		C98E29561AE948830089483D /* Utilities.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D76E9F1AE85D340019E17B /* Utilities.swift */; };
+		C98E29571AE948890089483D /* RandomInts.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9D76EA11AE85D660019E17B /* RandomInts.swift */; };
+		C98E29591AE948EA0089483D /* RandomReals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E29581AE948EA0089483D /* RandomReals.swift */; };
+		C98E295A1AE948FC0089483D /* RandomReals.swift in Sources */ = {isa = PBXBuildFile; fileRef = C98E29581AE948EA0089483D /* RandomReals.swift */; };
 		C9AEB9FB1AE55CEB0034D8B3 /* RandomKit.h in Headers */ = {isa = PBXBuildFile; fileRef = C9AEB9FA1AE55CEB0034D8B3 /* RandomKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C9AEBA011AE55CEB0034D8B3 /* RandomKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C9AEB9F51AE55CEB0034D8B3 /* RandomKit.framework */; };
 		C9AEBA121AE55D630034D8B3 /* Distributions.swift in Sources */ = {isa = PBXBuildFile; fileRef = C9AEBA111AE55D630034D8B3 /* Distributions.swift */; };
@@ -54,6 +58,7 @@
 		C929E4751AE593CE0046F452 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C929E4761AE593CE0046F452 /* RandomKitOSXTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RandomKitOSXTests.swift; sourceTree = "<group>"; };
 		C929E4861AE59B7A0046F452 /* DistributionTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DistributionTests.swift; sourceTree = "<group>"; };
+		C98E29581AE948EA0089483D /* RandomReals.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RandomReals.swift; sourceTree = "<group>"; };
 		C9AEB9F51AE55CEB0034D8B3 /* RandomKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = RandomKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C9AEB9F91AE55CEB0034D8B3 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C9AEB9FA1AE55CEB0034D8B3 /* RandomKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = RandomKit.h; sourceTree = "<group>"; };
@@ -163,6 +168,7 @@
 				C9AEB9FA1AE55CEB0034D8B3 /* RandomKit.h */,
 				C9D76E9F1AE85D340019E17B /* Utilities.swift */,
 				C9D76EA11AE85D660019E17B /* RandomInts.swift */,
+				C98E29581AE948EA0089483D /* RandomReals.swift */,
 				C9AEBA111AE55D630034D8B3 /* Distributions.swift */,
 				C9AEBA131AE562B00034D8B3 /* RandomIntegerVariables.swift */,
 				C9AEBA151AE5663E0034D8B3 /* RandomDoubleVariables.swift */,
@@ -391,6 +397,7 @@
 			files = (
 				C9AEBA161AE5663E0034D8B3 /* RandomDoubleVariables.swift in Sources */,
 				C9AEBA121AE55D630034D8B3 /* Distributions.swift in Sources */,
+				C98E29591AE948EA0089483D /* RandomReals.swift in Sources */,
 				C9AEBA181AE566E30034D8B3 /* Sequences.swift in Sources */,
 				C9D76EA01AE85D340019E17B /* Utilities.swift in Sources */,
 				C9D76EA21AE85D660019E17B /* RandomInts.swift in Sources */,
@@ -402,8 +409,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C98E29561AE948830089483D /* Utilities.swift in Sources */,
 				C929E4871AE59B7A0046F452 /* DistributionTests.swift in Sources */,
+				C98E29571AE948890089483D /* RandomInts.swift in Sources */,
 				C929E4821AE59B2B0046F452 /* RandomIntegerVariables.swift in Sources */,
+				C98E295A1AE948FC0089483D /* RandomReals.swift in Sources */,
 				C929E4831AE59B360046F452 /* Distributions.swift in Sources */,
 				C929E4851AE59B420046F452 /* Sequences.swift in Sources */,
 				C929E4841AE59B3D0046F452 /* RandomDoubleVariables.swift in Sources */,

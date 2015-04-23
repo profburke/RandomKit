@@ -10,61 +10,15 @@
 
 import Foundation
 
+// For details on generation of random variates, see
+// Devroye, Luc. Non-Uniform Random Variate Generation. Springer-Verlag: New York, 1986.
+// Available at: http://luc.devroye.org/rnbookindex.html
 
-
-/**
-
-Map a value to the given range.
-
-:param: value The value to transform.
-:param: range The range to which the given value should be mapped.
-:returns: The mapped value.
-
-*/
-public func linearTransform(value: Double, range: Range<Int>) -> Double
-{
-  return Double(range.startIndex) + Double(range.endIndex - range.startIndex) * value
-}
+// Also borrows heavily from randomkit (URL) (license)
 
 
 
-
-/**
-
-  An Int wrapper for arc4random_uniform.
-
-  The default value for *range* is 0..<UInt32.max.
-
-  :param: range The range for the returned random Int.
-  :returns: A random Int in the range range.startIndex0..<range.endIndex.
-
-*/
-public func randomInt(_ range: Range<Int> = 0..<Int(UInt32.max)) -> Int
-{
-  let upperBound = range.endIndex - range.startIndex
-  let randomValue = Int(arc4random_uniform(UInt32(upperBound)))
-  return range.startIndex + randomValue
-}
-
-
-
-
-/**
-
-  Generates a uniformly-distributed random double.
-
-  The default range is 0..<1.
-
-  :param: range The range from which the random value should be chosen.
-  :returns: a uniformly-distributed random double.
-
-*/
-public func uniform(_ range: Range<Int> = 0..<1) -> Double
-{
-  let randomValue = Double(arc4random())/Double(UInt32.max)
-  return linearTransform(randomValue, range)
-}
-
+// TODO random Float and Float80 ???
 
 
 
@@ -126,12 +80,15 @@ public func normal(mu: Double = 0.0, sigma: Double = 1.0) -> Double
 */
 public func exponential(_ c: Double = 1.0) -> Double
 {
-  return -1.0 * log(uniform()) / c
+  // log(1-uniform()) because uniform() can return 0
+  return -log(1 - uniform()) / c
 }
 
 
 
 
+// TODO: really ought to make l positive and then
+// mult by -1 in function ... makes more sense given what it is
 // l must be negative
 public func poisson(_ l: Double = -1) -> Int
 {
@@ -164,8 +121,15 @@ public func binomial(success: Double, trials: Int = 1) -> Int
 
 
 
-// Range is the range covered by the pdf; max is the maximum value of the
-// pdf on its range.
+/**
+  Generates a random double from an arbitrary distribution.
+
+  :param: pdf The probability density function of the desired distribution.
+  :param: range The range of allowed input values for the pdf (more accurately, the domain of the PDF).
+  :param: max The maximal value of the PDF on its domain.
+  :returns: a random double from the desired distribution.
+
+*/
 public func rejection(pdf: Double -> Double, range: Range<Int>, max: Double) -> Double
 {
   while true {
@@ -175,3 +139,28 @@ public func rejection(pdf: Double -> Double, range: Range<Int>, max: Double) -> 
     }
   }
 }
+
+
+
+
+
+
+// TODO: implement the following; revisit implementations of existing
+// gamma, beta, chisquare, noncentral chi square, f, noncentral f, standard Cauchy, standard T, weibull, power,
+// lapalce, fumbel, pareto, vonmises, logistic, lognormal, rayleigh, wald, zipf
+// geometric, hypergeometric, triangular, logseries ???
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

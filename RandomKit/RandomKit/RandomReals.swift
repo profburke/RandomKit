@@ -10,6 +10,8 @@ import Foundation
 
 
 
+
+
 /**
 
 Generates a uniformly-distributed random double.
@@ -23,5 +25,15 @@ The default range is 0..<1.
 public func uniform(_ range: Range<Int> = 0..<1) -> Double
 {
   let r = Double(arc4random())/Double(UInt32.max)
+  return linearTransform(r, range)
+}
+
+
+
+
+
+public func uniformFloat(_ range: Range<Int> = 0..<1) -> Float
+{
+  let r = Float(arc4random())/Float(UInt32.max)
   return linearTransform(r, range)
 }

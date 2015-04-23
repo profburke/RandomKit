@@ -58,20 +58,35 @@ public func randomUInt64(range: Range<UInt64>) -> UInt64
 // MARK: Int32, UInt32
 
 
+/**
+
+Generates a random Int32.
+
+:returns: A random Int32.
+
+*/
 public func randomInt32() -> Int32
 {
-  let r = arc4random()
-  return Int32(r - UInt32.max/2) // FIXME: this isn't correct
+  let r = UInt64(arc4random())
+  return Int32(r - UInt64(UInt32.max) - 1)
 }
 
 
 
 
+/**
+
+Generates a random Int32 in the range 0..<upper.
+
+:param: upper The upper bound for the returned random number.
+:returns: a random Int32 in the range 0..<upper.
+
+*/
 public func randomInt32(range: Range<Int32>) -> Int32
 {
   let upper = UInt32(range.endIndex - range.startIndex)
-  let r = randomUInt32(upper)
-  return Int32.max
+  let r = UInt64(randomUInt32(upper))
+  return Int32(UInt64(range.startIndex) + r)
 }
 
 
@@ -200,15 +215,30 @@ public func randomUInt16(upper: UInt16) -> UInt16
 // MARK: Int8, UInt8
 
 
+/**
+
+Generates a random Int8.
+
+:returns: A random Int8.
+
+*/
 public func randomInt8() -> Int8
 {
-  let r = randomInt32(Int32(Int16.min)..<(Int32(Int16.max) + 1))
+  let r = randomInt32(Int32(Int8.min)..<(Int32(Int8.max) + Int32(1)))
   return Int8(r)
 }
 
 
 
 
+/**
+
+Generates a random Int8 in the given range.
+
+:param: range The range from which to generate the random number.
+:returns: a random Int8 from the given range.
+
+*/
 public func randomInt8(range: Range<Int8>) -> Int8
 {
   let r = randomInt32(Int32(range.startIndex)..<Int32(range.endIndex))
