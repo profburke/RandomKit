@@ -19,7 +19,7 @@ class DistributionTests: XCTestCase
   {
     let trials = 1000000
     
-    for i in 0..<trials {
+    for _ in 0..<trials {
       let u = uniform()
       if u < 0.0 { XCTFail("Generated value < 0") }
       if u > 1.0 { XCTFail("Generated value > 1") }
@@ -34,7 +34,7 @@ class DistributionTests: XCTestCase
     var negativeAppeared = false
     var positiveAppeared = false
     
-    for i in 0..<trials {
+    for _ in 0..<trials {
       let u = uniform(range)
       if u < Double(range.startIndex) { XCTFail("Generated value < \(range.startIndex)") }
       if u > Double(range.endIndex) { XCTFail("Generated value > \(range.endIndex)") }
@@ -52,13 +52,13 @@ class DistributionTests: XCTestCase
     let trials = 1000000
     var sum = 0.0
     
-    for i in 0..<trials {
+    for _ in 0..<trials {
       let n = normal()
       sum += n
     }
     let average = sum/Double(trials)
-    println("Avg: \(average)")
-    XCTAssertEqualWithAccuracy(average, 0.0, 0.01, "average is off")
+    print("Avg: \(average)")
+    XCTAssertEqualWithAccuracy(average, 0.0, accuracy: 0.01, "average is off")
   }
   
 
@@ -68,13 +68,13 @@ class DistributionTests: XCTestCase
     let trials = 1000000
     var sum = 0.0
     
-    for i in 0..<trials {
-      let n = normal(mu: 100)
+    for _ in 0..<trials {
+      let n = normal(100)
       sum += n
     }
     let average = sum/Double(trials)
-    println("Avg: \(average)")
-    XCTAssertEqualWithAccuracy(average, 100.0, 0.01, "average is off")
+    print("Avg: \(average)")
+    XCTAssertEqualWithAccuracy(average, 100.0, accuracy: 0.01, "average is off")
   }
   
 

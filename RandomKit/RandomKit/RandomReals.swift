@@ -22,18 +22,18 @@ The default range is 0..<1.
 :returns: a uniformly-distributed random double.
 
 */
-public func uniform(_ range: Range<Int> = 0..<1) -> Double
+public func uniform(range: Range<Int> = 0..<1) -> Double
 {
   let r = Double(arc4random())/Double(UInt32.max)
-  return linearTransform(r, range)
+  return linearTransform(r, range: range)
 }
 
 
 
 
 
-public func uniformFloat(_ range: Range<Int> = 0..<1) -> Float
+public func uniformFloat(range: Range<Int> = 0..<1) -> Float
 {
   let r = Float(arc4random())/Float(UInt32.max)
-  return linearTransform(r, range)
+  return linearTransform(r, range: range)
 }

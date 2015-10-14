@@ -9,7 +9,7 @@
 import Foundation
 
 
-public protocol RandomIntegerVariable: Printable, Equatable
+public protocol RandomIntegerVariable: CustomStringConvertible, Equatable
 {
   var value: Int { get }
 }

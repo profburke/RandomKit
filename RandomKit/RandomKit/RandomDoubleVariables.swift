@@ -10,7 +10,7 @@ import Foundation
 
 
 
-public protocol RandomDoubleVariable: Printable, Equatable
+public protocol RandomDoubleVariable: CustomStringConvertible, Equatable
 {
   var value: Double { get }
 }
@@ -30,7 +30,7 @@ public struct NormalVar: RandomDoubleVariable
   
   public var value: Double {
     get {
-      return normal(mu: mu, sigma: sigma)
+      return normal(mu, sigma: sigma)
     }
   }
   

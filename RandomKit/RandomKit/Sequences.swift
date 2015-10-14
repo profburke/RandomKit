@@ -12,11 +12,11 @@ import Foundation
 
 
 
-public struct UniformSequence: SequenceType
-{
-  public func generate() -> GeneratorOf<Double> {
-    return GeneratorOf { uniform() }
-  }
-}
+//public struct UniformSequence: SequenceType
+//{
+//  public func generate() -> AnyGenerator<Double> {
+//    return AnyGenerator { uniform() }
+//  }
+//}
 
 

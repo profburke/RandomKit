@@ -49,7 +49,7 @@ public func normal(mu: Double = 0.0, sigma: Double = 1.0) -> Double
     var U1: Double
     var U2: Double
     var W: Double
-    do {
+    repeat {
       U1 = uniform(-1...1)
       U2 = uniform(-1...1)
       W = pow(U1, 2) + pow(U2, 2)
@@ -78,7 +78,7 @@ public func normal(mu: Double = 0.0, sigma: Double = 1.0) -> Double
   :returns: an exponentially-distributed random double.
 
 */
-public func exponential(_ c: Double = 1.0) -> Double
+public func exponential(c: Double = 1.0) -> Double
 {
   // log(1-uniform()) because uniform() can return 0
   return -log(1 - uniform()) / c
@@ -90,12 +90,12 @@ public func exponential(_ c: Double = 1.0) -> Double
 // TODO: really ought to make l positive and then
 // mult by -1 in function ... makes more sense given what it is
 // l must be negative
-public func poisson(_ l: Double = -1) -> Int
+public func poisson(l: Double = -1) -> Int
 {
   let threshold = exp(l)
   var product = 1.0
   var count = 0
-  do {
+  repeat {
     product *= uniform()
     count++
   } while (threshold < product)
@@ -109,7 +109,7 @@ public func binomial(success: Double, trials: Int = 1) -> Int
 {
   // success must be in [0,1]
   var result = 0
-  for i in 1...trials {
+  for _ in 1...trials {
     if uniform() < success {
       result++
     }
@@ -133,7 +133,7 @@ public func binomial(success: Double, trials: Int = 1) -> Int
 public func rejection(pdf: Double -> Double, range: Range<Int>, max: Double) -> Double
 {
   while true {
-    let test = linearTransform(uniform(), range)
+    let test = linearTransform(uniform(), range: range)
     if uniform() < pdf(test/max) {
       return test
     }

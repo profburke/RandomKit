@@ -31,9 +31,13 @@ public func randomInt64(range: Range<Int64>) -> Int64
 
 
 
+// TODO: I think this has the correct propreties,
+// need to do a proper analysis
 public func randomUInt64() -> UInt64
 {
-  return UInt64.max
+  let r = UInt64(arc4random())
+  let s = UInt64(arc4random())
+  return (r << 32) + s
 }
 
 
@@ -41,7 +45,7 @@ public func randomUInt64() -> UInt64
 
 public func randomUInt64(upper: UInt64) -> UInt64
 {
-  return UInt64.max
+  return 12
 }
 
 
